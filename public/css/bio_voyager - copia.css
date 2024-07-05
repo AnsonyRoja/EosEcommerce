@@ -1,0 +1,186 @@
+
+@font-face {
+    font-family: 'Bree Th';
+    src: url('../assets/fonts/Bree/Bree-Thin.woff2') format('woff2'),
+        url('../assets/fonts/Bree/Bree-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bree Rg';
+    src: url('../assets/fonts/Bree/Bree-Bold.woff2') format('woff2'),
+        url('../assets/fonts/Bree/Bree-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bree Rg';
+    src: url('../assets/fonts/Bree/Bree-BoldOblique.woff2') format('woff2'),
+        url('../assets/fonts/Bree/Bree-BoldOblique.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bree EB';
+    src: url('../assets/fonts/Bree/Bree-ExtraBold.woff2') format('woff2'),
+        url('../assets/fonts/Bree/Bree-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bree Lt';
+    src: url('../assets/fonts/Bree/Bree-LightOblique.woff2') format('woff2'),
+        url('../assets/fonts/Bree/Bree-LightOblique.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bree Th';
+    src: url('../assets/fonts/Bree/Bree-ThinOblique.woff2') format('woff2'),
+        url('../assets/fonts/Bree/Bree-ThinOblique.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bree EB';
+    src: url('../assets/fonts/Bree/Bree-ExtraBoldOblique.woff2') format('woff2'),
+        url('../assets/fonts/Bree/Bree-ExtraBoldOblique.woff') format('woff');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bree Lt';
+    src: url('../assets/fonts/Bree/Bree-Light.woff2') format('woff2'),
+        url('../assets/fonts/Bree/Bree-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bree Rg';
+    src: url('../assets/fonts/Bree/Bree-Oblique.woff2') format('woff2'),
+        url('../assets/fonts/Bree/Bree-Oblique.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bree Rg';
+    src: url('../assets/fonts/Bree/Bree-Regular.woff2') format('woff2'),
+        url('../assets/fonts/Bree/Bree-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body{
+    font-family: 'Bree Rg';
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+}
+a{
+    color: #000;
+    font-weight: 300;
+    text-decoration: none;
+    transition: color .3s ease;
+    transition: filter .3s ease;
+}
+#dataTable a{
+    font-weight: bold;
+}
+a:hover{
+    color: #1e2c00;
+    filter: brightness(85%);
+    text-decoration: none;
+}
+.app-container.expanded .content-container .side-menu .navbar-header .navbar-brand .title{
+    text-transform: none;
+}
+.navbar .navbar-default{
+    background-color:#FFFFFF;
+}
+.voyager .side-menu.sidebar-inverse{
+    background-color:#FFFFFF;
+
+}
+.voyager .side-menu.sidebar-inverse{
+    background-color:#FFFFFF;
+
+}
+.voyager .side-menu.sidebar-inverse .navbar li>a .icon{
+    color:#28b67a;
+}
+.voyager .side-menu.sidebar-inverse .navbar li.active>a .icon{
+    color:#80BC00;
+}
+
+.voyager .side-menu.sidebar-inverse .navbar li>a:hover{
+    background:#FFF;
+    color:#28b67a;
+}
+
+.voyager .side-menu.sidebar-inverse .navbar li.dropdown>.panel-collapse{
+    background:rgb(243, 243, 243);
+}
+.voyager .table>thead>tr>th{
+    background-color: #28b67a;
+    color:#000;
+    font-weight: 800;
+}
+.table{
+    font-family: 'Bree Th';
+    color:#000;
+}
+
+.voyager .navbar.navbar-default .navbar-nav>li:hover>a, .voyager .navbar .navbar-nav>li:hover>a{
+    color:#28b67a;
+}
+.bgimage{
+background: #80bc00;
+}
+.control-label{
+    color: #28b67a;
+}
+.dimmer_nuevo{
+    background: #FFF;
+    color:#000;
+}
+.panel.widget h4{
+    color:#000;
+}
+input[type=radio]:checked~.check:before{
+    background-color:#eba900;
+}
+input[type=radio]:checked~.check{
+    border: 4px solid #eba900;
+}
+ul.radio li:hover .check{
+    border: 4px solid #eba900;
+}
+.page-title{
+    font-weight: 100;
+    color:#e1251b;
+    font-size:30px;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected]{
+    background-color:#eba900;
+}
+.app-container .content-container .side-menu .navbar-nav li.dropdown>a:after{
+    color:#28b67a;
+}
+.btn-group->.btn, .btn-sm{
+    padding: 0 3px 0 3px;
+    font-size: 13px;
+}
+.voyager .pagination .active>a, .voyager .pagination .active>a:focus, .voyager .pagination .active>a:hover, .voyager .pagination .active>span:focus, .voyager .pagination .active>span:hover, .voyager .pagination .active span{
+    background: #eba900;
+    border-color:#da9c01;
+}

@@ -1,0 +1,14 @@
+1) Crear la ruta, el modelo y el controlador para la creacion del combo promocional de productos en el ecommerce
+2) Verificar la vista, porque no estan llegando los valores que hay en la tabla de la base de datos que son los combos 
+
+
+
+
+
+
+
+
+
+
+
+

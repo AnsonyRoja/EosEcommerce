@@ -1,0 +1,54 @@
+.range-slider {
+	pointer-events: none;
+	margin: 0px;
+	cursor: pointer;
+	padding-left: 30%;
+	padding-right: 30%;
+	background-color: #ccc;
+	box-sizing: border-box;
+	border-radius: 3px;
+	width: 100% !important;
+}
+.range-slider.focusable {
+	border: 1px solid #222
+}
+.range-thumb {
+	cursor: pointer;
+	border-color: #fff;
+	border-style: solid;
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 50%;
+	box-shadow: 0 0 6px rgba(0,0,0,.2);
+	position: absolute;
+}
+.range-track {
+	pointer-events: none;
+	height: 100%;
+	background-color: #80bc00;
+}
+.range-container {
+	position: relative;
+}
+.range-output-price{
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+.range-output-price span{
+	margin: 0 5px;
+}
+.range-output {
+	pointer-events: none;
+	margin: 0;
+	width: initial !important;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+.range-output p {
+	pointer-events: none;
+	font-size: 14px;
+	color: #0a1a17;
+	text-align: center;
+}

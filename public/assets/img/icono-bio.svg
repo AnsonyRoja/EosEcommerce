@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 12.51 15"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="icono-bio.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata16">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview14"
+     showgrid="false"
+     inkscape:zoom="15.733333"
+     inkscape:cx="6.2550001"
+     inkscape:cy="7.5"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Capa_2" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-1{fill:#fff;}</style>
+  </defs>
+  <title
+     id="title6">icono-puntos-bio</title>
+  <g
+     id="Capa_2"
+     data-name="Capa 2">
+    <g
+       id="Guias_y_recursos"
+       data-name="Guias y recursos"
+       style="fill:#e1251b;fill-opacity:1">
+      <path
+         class="cls-1"
+         d="M11.26,5.6A4.77,4.77,0,0,0,7.62,4.2a9.19,9.19,0,0,0-2.16.27V0h-2V10.38A9.27,9.27,0,0,0,0,15s1.8-1.42,5.74-1a7.16,7.16,0,0,0,1,.13h0a4.52,4.52,0,0,0,.52,0,5.12,5.12,0,0,0,3.8-1.48,5,5,0,0,0,1.43-3.58A4.83,4.83,0,0,0,11.26,5.6M9.54,11.49a3.07,3.07,0,0,1-2.35,1,4.84,4.84,0,0,1-1-.12,8.29,8.29,0,0,0-3.12-.1A7.27,7.27,0,0,1,8.72,9.72a7.2,7.2,0,0,0-3.26-.14V6.17a7.16,7.16,0,0,1,2.05-.3,2.7,2.7,0,0,1,2.16.87,3.42,3.42,0,0,1,.75,2.33,3.53,3.53,0,0,1-.88,2.42"
+         id="path8"
+         style="fill:#e1251b;fill-opacity:1" />
+    </g>
+  </g>
+</svg>

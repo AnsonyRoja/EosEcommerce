@@ -1,0 +1,37 @@
+ALTER SEQUENCE trackings_id_seq RESTART WITH 103;
+
+
+ALTER TABLE orders
+ALTER COLUMN delivery_type TYPE VARCHAR(50);
+
+ALTER TABLE orders
+ADD COLUMN delivery_type INTEGER;
+
+
+ALTER SEQUENCE orders_id_seq RESTART WITH 20;
+
+ALTER SEQUENCE orders_id_seq RESTART WITH 20;
+
+
+ALTER SEQUENCE order_products_id_seq RESTART WITH 20;
+
+ALTER SEQUENCE trackings_id_seq RESTART WITH 120;
+
+ALTER SEQUENCE advs_id_seq RESTART WITH 5;
+
+ALTER TABLE det_product_packages ADD COLUMN product_id INT;
+
+
+INSERT INTO bank_datas (id,titular, description, account_type, banks_id, status, created_at, updated_at, payment_methods_id, coins_id, stores_id)
+VALUES (3,'Nuevo Titular', 'Nueva Descripción', 'O', 3, 'A', NOW(), NOW(), 4, 1, NULL);
+
+
+
+
+
+
+
+
+
+
+

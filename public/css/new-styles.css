@@ -1,0 +1,160 @@
+div.middle-header {
+	background:white !important; 
+	border-color:white !important;
+	padding:20px 0px 6px 0px !important;
+}
+
+input#bio-search{
+	background:#EBEBEB !important; 
+	border-radius:20px !important; 
+	padding-left:20px !important;
+}
+
+div#brand-header img{
+	width: 100px;
+	height: 100px;
+}
+
+button.btn-search{
+	margin-right:15px !important;
+}
+
+section#main-slider, div#carouselExampleIndicators, section#main-slider div.carousel-inner{
+	height: 400px !important;
+}
+
+section#offers{
+	margin-top: 60px !important;
+}
+
+div#mainNavbar{
+	margin-bottom: 20px !important;
+}
+
+section#combos{
+	height: 500px !important;
+}
+
+ul.social-icons{
+	list-style: none !important;
+	height: auto;
+	overflow: hidden;
+}
+
+ul.social-icons li a{
+	float: right;
+	display:block;
+	padding: 25px !important;
+	margin:0px 2px !important;
+
+}
+
+div.carousel img{
+	width: 100%;	
+}
+
+a.slfacebook{
+	background: url('/assets/img/social_icons.png') 0 0;
+}
+
+a.slinstagram{
+	background: url('/assets/img/social_icons.png') -50px 0;
+}
+
+a.sltwitter{
+	background: url('/assets/img/social_icons.png') -100px 0;
+}
+
+a.slyoutube{
+	background: url('/assets/img/social_icons.png') -150px 0;
+}
+
+ul.carousel-indicators{
+	display: none;
+}
+
+.product-block .product-img .carousel-inner{
+	height: 200px;
+}
+
+.carrito .wizard-title h3{
+	display: inline-flex;
+}
+
+
+.overlay {	
+	height: 100%;
+	width: 100%;
+	display: none;
+	position: fixed; 
+	z-index: 1; 
+	left: 0;
+	top: 0;
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0, 0.9); 
+	overflow-x: hidden; 
+}
+
+.overlay-content {
+	position: relative;
+	top: 25%; 
+	width: 100%; 
+	text-align: center; 
+	margin-top: 30px; 
+}
+
+.overlay a {
+	padding: 8px;
+	text-decoration: none;
+	font-size: 36px;
+	color: #818181;
+	display: block; 
+	transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+	color: #f1f1f1;
+}
+
+@media screen and (max-height: 450px) {
+	.overlay a {font-size: 20px}
+}
+
+#all-orders .dropdown-item {
+	text-align: center;
+}
+
+.wrapperStars {
+  display: inline-block;
+}
+.wrapperStars * {
+  float: right;
+}
+.wrapperStar input[type=radio] {
+  display: none!important;
+}
+.wrapperStars label {
+  font-size: 30px;
+}
+
+.wrapperStar input[type=radio]:checked ~ label,.wrapperStar input[type=radio]:checked+label {
+  color: yellow;
+}
+
+#faq_view{
+	background-image: url(../../img/fondo01.jpg);
+    background-size: contain;
+    background-position: left bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.oferta{
+	color: #F9FBF7;
+	background-color: #EF901A;
+	border: 1px solid #FF7700;
+    color: white;
+    padding: 3px;
+    border-radius: 12px;
+    text-shadow: 2px 1px 3px rgba(0,0,0,0.65)
+}
