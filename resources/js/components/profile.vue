@@ -33,14 +33,11 @@
 										href="#personal-info" role="tab" aria-controls="personal-info" aria-selected="true">
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.69 20">
 											<title>datos-personales-bio-mercados</title>
-											<g id="Capa_2" data-name="Capa 2">
-												<g id="Perfil_de_Usuario" data-name="Perfil de Usuario">
-													<path
-														d="M8.22,9.63a4.63,4.63,0,0,0,3.4-1.41A4.63,4.63,0,0,0,13,4.82a4.65,4.65,0,0,0-1.41-3.41A4.63,4.63,0,0,0,8.22,0,4.65,4.65,0,0,0,4.81,1.41,4.65,4.65,0,0,0,3.4,4.82a4.63,4.63,0,0,0,1.41,3.4A4.65,4.65,0,0,0,8.22,9.63ZM5.64,2.24A3.48,3.48,0,0,1,8.22,1.17a3.46,3.46,0,0,1,2.57,1.07,3.48,3.48,0,0,1,1.07,2.58,3.46,3.46,0,0,1-1.07,2.57A3.46,3.46,0,0,1,8.22,8.46,3.48,3.48,0,0,1,5.64,7.39,3.46,3.46,0,0,1,4.57,4.82,3.48,3.48,0,0,1,5.64,2.24Z" />
-													<path
-														d="M16.65,15.38a12.56,12.56,0,0,0-.17-1.26,9.22,9.22,0,0,0-.31-1.28,6.15,6.15,0,0,0-.52-1.18,4.61,4.61,0,0,0-.79-1,3.69,3.69,0,0,0-1.13-.71,4,4,0,0,0-1.44-.26,1.47,1.47,0,0,0-.79.33l-.81.53A4.46,4.46,0,0,1,9.63,11a4.1,4.1,0,0,1-1.29.21A4.15,4.15,0,0,1,7.05,11a4.37,4.37,0,0,1-1-.46L5.18,10a1.45,1.45,0,0,0-.78-.33A4,4,0,0,0,3,9.92a3.69,3.69,0,0,0-1.13.71,4.92,4.92,0,0,0-.79,1,6.83,6.83,0,0,0-.52,1.18A10.91,10.91,0,0,0,.2,14.12,12.41,12.41,0,0,0,0,15.38c0,.38,0,.78,0,1.18a3.3,3.3,0,0,0,1,2.51A3.52,3.52,0,0,0,3.53,20h9.63a3.53,3.53,0,0,0,2.54-.93,3.34,3.34,0,0,0,1-2.51c0-.4,0-.8,0-1.18Zm-1.76,2.84a2.37,2.37,0,0,1-1.73.61H3.53a2.4,2.4,0,0,1-1.74-.61,2.18,2.18,0,0,1-.62-1.66c0-.37,0-.74,0-1.1a8.52,8.52,0,0,1,.15-1.14,8.36,8.36,0,0,1,.27-1.12,5.09,5.09,0,0,1,.42-1,3.54,3.54,0,0,1,.58-.76A2.39,2.39,0,0,1,3.39,11a2.64,2.64,0,0,1,.92-.18l.23.14.83.54a5.64,5.64,0,0,0,1.32.59,5.37,5.37,0,0,0,3.3,0,5.74,5.74,0,0,0,1.33-.59l.82-.54.24-.14a2.74,2.74,0,0,1,.92.18,2.34,2.34,0,0,1,.75.47,3.24,3.24,0,0,1,.58.76,5.13,5.13,0,0,1,.43,1,8.36,8.36,0,0,1,.27,1.12q.11.62.15,1.14h0c0,.35,0,.72,0,1.1a2.14,2.14,0,0,1-.62,1.66Z" />
-												</g>
+										    <g id="Perfil_de_Usuario" data-name="Perfil de Usuario">
+											<path fill="#203876" d="M8.22,9.63a4.63,4.63,0,0,0,3.4-1.41A4.63,4.63,0,0,0,13,4.82a4.65,4.65,0,0,0-1.41-3.41A4.63,4.63,0,0,0,8.22,0,4.65,4.65,0,0,0,4.81,1.41,4.65,4.65,0,0,0,3.4,4.82a4.63,4.63,0,0,0,1.41,3.4A4.65,4.65,0,0,0,8.22,9.63ZM5.64,2.24A3.48,3.48,0,0,1,8.22,1.17a3.46,3.46,0,0,1,2.57,1.07,3.48,3.48,0,0,1,1.07,2.58,3.46,3.46,0,0,1-1.07,2.57A3.46,3.46,0,0,1,8.22,8.46,3.48,3.48,0,0,1,5.64,7.39,3.46,3.46,0,0,1,4.57,4.82,3.48,3.48,0,0,1,5.64,2.24Z"/>
+											<path fill="#203876" d="M16.65,15.38a12.56,12.56,0,0,0-.17-1.26,9.22,9.22,0,0,0-.31-1.28,6.15,6.15,0,0,0-.52-1.18,4.61,4.61,0,0,0-.79-1,3.69,3.69,0,0,0-1.13-.71,4,4,0,0,0-1.44-.26,1.47,1.47,0,0,0-.79.33l-.81.53A4.46,4.46,0,0,1,9.63,11a4.1,4.1,0,0,1-1.29.21A4.15,4.15,0,0,1,7.05,11a4.37,4.37,0,0,1-1-.46L5.18,10a1.45,1.45,0,0,0-.78-.33A4,4,0,0,0,3,9.92a3.69,3.69,0,0,0-1.13.71,4.92,4.92,0,0,0-.79,1,6.83,6.83,0,0,0-.52,1.18A10.91,10.91,0,0,0,.2,14.12,12.41,12.41,0,0,0,0,15.38c0,.38,0,.78,0,1.18a3.3,3.3,0,0,0,1,2.51A3.52,3.52,0,0,0,3.53,20h9.63a3.53,3.53,0,0,0,2.54-.93,3.34,3.34,0,0,0,1-2.51c0-.4,0-.8,0-1.18Zm-1.76,2.84a2.37,2.37,0,0,1-1.73.61H3.53a2.4,2.4,0,0,1-1.74-.61,2.18,2.18,0,0,1-.62-1.66c0-.37,0-.74,0-1.1a8.52,8.52,0,0,1,.15-1.14,8.36,8.36,0,0,1,.27-1.12,5.09,5.09,0,0,1,.42-1,3.54,3.54,0,0,1,.58-.76A2.39,2.39,0,0,1,3.39,11a2.64,2.64,0,0,1,.92-.18l.23.14.83.54a5.64,5.64,0,0,0,1.32.59,5.37,5.37,0,0,0,3.3,0,5.74,5.74,0,0,0,1.33-.59l.82-.54.24-.14a2.74,2.74,0,0,1,.92.18,2.34,2.34,0,0,1,.75.47,3.24,3.24,0,0,1,.58.76,5.13,5.13,0,0,1,.43,1,8.36,8.36,0,0,1,.27,1.12q.11.62.15,1.14h0c0,.35,0,.72,0,1.1a2.14,2.14,0,0,1-.62,1.66Z"/>
 											</g>
+
 										</svg>
 										Datos personales
 									</a>
@@ -226,7 +223,7 @@
 														</div>
 														<div class="col-lg-6">
 															<div class="form-group">
-																<label for="user-contact-phone">Teléfono de
+																<label  for="user-contact-phone">Teléfono de
 																	Contacto:</label>
 																<button class="btn btn-edit-info" type="button"><img
 																		src="assets/img/editar-bio-mercados.svg"></button>
@@ -234,7 +231,7 @@
 																		src="assets/img/confirmar-bio-mercados.svg" @click="updateDetails" ></button>
 																<input type="text" class="form-control"
 																	id="user-contact-phone" name="user-contact-phone"
-																	disabled="disabled" v-model="userData.phone">
+																	disabled="disabled"  v-model="userData.phone">
 															</div>
 														</div>
 														<div class="col-lg-6">
@@ -282,7 +279,7 @@
 													</div>
 													<div class="mt-5"></div>
 													<div class="form-group">
-														<button class="btn btn-submit" type="button">GUARDAR
+														<button class="btn btn-submit" style="background-color: black" type="button">GUARDAR
 															CAMBIOS</button>
 													</div>
 												</div>
@@ -1044,18 +1041,22 @@ export default {
 			});
 		},
 		update_profile(user) {
-			const that = this;
-			console.log(user);
+				const that = this;
+				console.log(user);
 
-			const user_data = {
-				...user,
-				
-			};
-			console.log("esto es user_data", user_data);
-			axios.post(URLSERVER + 'api/update_profile', {
-				user_data: user_data,
-			})
-				.then(function (response) {
+				const user_data = {
+					...user,
+				};
+				console.log("esto es user_data", user_data);
+
+				const maxAttempts = 5; // Número máximo de intentos
+				const retryDelay = 1000; // Retraso inicial en ms
+
+				async function makeRequest(attempts = 0) {
+					try {
+					const response = await axios.post(URLHOME + 'api/update_profile', {
+						user_data: user_data,
+					});
 					console.log(response.data);
 					that.userData = user_data;
 					fetch(URLHOME + "api_rapida.php?evento=obtenerTodo");
@@ -1064,11 +1065,24 @@ export default {
 						'Tus datos han sido guardado exitosamente',
 						'success'
 					);
-				})
-				.catch(function (error) {
-					console.log("esto es el error", error);
-				});
-		},
+					} catch (error) {
+					if (error.response && error.response.status === 429 && attempts < maxAttempts) {
+						console.warn(`Intento ${attempts + 1} fallido. Esperando ${retryDelay * (attempts + 1)}ms antes de reintentar.`);
+						setTimeout(() => makeRequest(attempts + 1), retryDelay * (attempts + 1));
+					} else {
+						console.log("esto es el error", error);
+						Swal.fire(
+						'Error',
+						'Hubo un problema al guardar tus datos. Por favor, intenta de nuevo más tarde.',
+						'error'
+						);
+					}
+				  }
+				}
+
+				makeRequest();
+				},
+
 		async getStates() {
 			const response = await axios.get(URLSERVER + "api/states");
 			console.log("esto es la respuesta", response);
@@ -1230,7 +1244,7 @@ export default {
 	
 
 	console.log("esto es data", data);
-
+	
     // Verificar si habDirection está vacío
     if (!this.userlogged.habDirection) {
       // Si habDirection está vacío, inicializa sus propiedades

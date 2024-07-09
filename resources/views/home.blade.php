@@ -112,57 +112,50 @@ fetchData();
 		
 	}
 	#loader {
-		display: block;
-		position: relative;
-		left: 50%;
-		top: 50%;
-		width: 150px;
-		height: 150px;
-		margin: -75px 0 0 -75px;
-		border-radius: 50%;
-		border: 3px solid transparent;
-		border-top-color: #67BE5A;
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    /* border-top-color: red; */
+    -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+    z-index: 1001;
+}
 
-		-webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
-		animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
-		z-index: 1001;
-	
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15%;
+    border: 3px solid transparent;
+    -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+    background-image: url("img/Carrito@2x.png");
+    background-repeat: no-repeat;
+    background-size: contain; /* Cambiado a 'contain' para asegurarse de que la imagen se ajuste correctamente */
+    background-position: center; /* Asegura que la imagen esté centrada */
+}
 
-	}
-
-    #loader:before {
-        content: "";
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        right: 5px;
-        bottom: 5px;
-        border-radius: 50%;
-        border: 3px solid transparent;
-        border-top-color: #e74c3c;
-
-        -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
-        animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
-		background-image: url("img/logo_bio_loader.png");
-		background-repeat: no-repeat;
-		background-size: 120px;
-    }
-
-    #loader:after {
-        content: "";
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        right: 15px;
-        bottom: 15px;
-        border-radius: 50%;
-        border: 3px solid transparent;
-        border-top-color: #f9c922;
-
-        -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
-          animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
-    }
-
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
 
 	#loader-wrapper .loader-section {
 		position: fixed;

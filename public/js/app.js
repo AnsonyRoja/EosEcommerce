@@ -2728,21 +2728,34 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     update_profile: function update_profile(user) {
-      var that = this;
-      console.log("this user> antes de guardarse", user);
-      var user_data = _objectSpread({}, user.habDirection);
-      console.log("esto es user_data", user_data);
-      axios.post(URLSERVER + 'api/update_profile', {
-        user_data: user_data
-      }).then(function (response) {
-        console.log(response.data);
-        that.userData = user_data;
-        console.log("valor de that.userData", that.userData);
-        fetch(URLHOME + "api_rapida.php?evento=obtenerTodo");
-        Swal.fire('Perfil', 'Tus datos han sido guardado exitosamente', 'success');
-      })["catch"](function (error) {
-        console.log("esto es el error", error);
-      });
+      var _this4 = this;
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+        var that, user_data;
+        return _regeneratorRuntime().wrap(function _callee4$(_context4) {
+          while (1) switch (_context4.prev = _context4.next) {
+            case 0:
+              that = _this4;
+              console.log("this user> antes de guardarse", user);
+              user_data = _objectSpread(_objectSpread({}, user), user.habDirection[0]);
+              console.log("esto es user_data", user_data);
+              _context4.next = 6;
+              return axios.post(URLSERVER + 'api/update_profile', {
+                user_data: user_data
+              }).then(function (response) {
+                console.log(response.data);
+                that.userData = user_data;
+                console.log("valor de that.userData", that.userData);
+                fetch(URLHOME + "api_rapida.php?evento=obtenerTodo");
+                Swal.fire('Perfil', 'Tus datos han sido guardado exitosamente', 'success');
+              })["catch"](function (error) {
+                console.log("esto es el error", error);
+              });
+            case 6:
+            case "end":
+              return _context4.stop();
+          }
+        }, _callee4);
+      }))();
     }
   }
 });
@@ -3117,14 +3130,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     userlogged: Object
   },
   methods: {
-    getAmountBW: function getAmountBW() {
-      var _this2 = this;
-      if (this.userlogged) {
-        axios.get(URLHOME + 'api/getAmountBW/' + this.userlogged.id).then(function (datos) {
-          _this2.saldo = datos.data;
-        });
+    getAmountBW: function () {
+      var _getAmountBW = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+        var _this2 = this;
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              if (!this.userlogged) {
+                _context.next = 3;
+                break;
+              }
+              _context.next = 3;
+              return axios.get(URLHOME + 'api/getAmountBW/' + this.userlogged.id).then(function (datos) {
+                _this2.saldo = datos.data;
+              });
+            case 3:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee, this);
+      }));
+      function getAmountBW() {
+        return _getAmountBW.apply(this, arguments);
       }
-    },
+      return getAmountBW;
+    }(),
     search: function search() {
       var route = "/catalog?search=" + this.searchText;
       window.location.href = route;
@@ -3137,69 +3167,69 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     getCategories: function getCategories() {
       var _this3 = this;
-      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var response;
-        return _regeneratorRuntime().wrap(function _callee$(_context) {
-          while (1) switch (_context.prev = _context.next) {
-            case 0:
-              _context.next = 2;
-              return axios.get(URLSERVER + "api/categories");
-            case 2:
-              response = _context.sent;
-              _this3.categories = response.data.data;
-            case 4:
-            case "end":
-              return _context.stop();
-          }
-        }, _callee);
-      }))();
-    },
-    SearchProducts: function SearchProducts(e) {
-      var _this4 = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-        var len, loader, val, response;
+        var response;
         return _regeneratorRuntime().wrap(function _callee2$(_context2) {
           while (1) switch (_context2.prev = _context2.next) {
             case 0:
-              len = e.target.value.length;
-              loader = _this4.gifSearch;
-              val = e.target.value;
-              _this4.searched = {};
-              if (!(len >= 3)) {
-                _context2.next = 14;
-                break;
-              }
-              _this4.gifSearch = 'block';
-              _context2.next = 8;
-              return axios.get(URLSERVER + "api/products/search/" + val);
-            case 8:
+              _context2.next = 2;
+              return axios.get(URLSERVER + "api/categories");
+            case 2:
               response = _context2.sent;
-              _this4.searched = response.data.data;
-              _this4.dSearch = 'block';
-              _this4.gifSearch = 'none';
-              _context2.next = 16;
-              break;
-            case 14:
-              _this4.dSearch = 'none';
-              _this4.gifSearch = 'none';
-            case 16:
+              _this3.categories = response.data.data;
+            case 4:
             case "end":
               return _context2.stop();
           }
         }, _callee2);
       }))();
     },
-    getFavorites: function getFavorites() {
-      var _this5 = this;
+    SearchProducts: function SearchProducts(e) {
+      var _this4 = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
-        var response;
+        var len, loader, val, response;
         return _regeneratorRuntime().wrap(function _callee3$(_context3) {
           while (1) switch (_context3.prev = _context3.next) {
             case 0:
-              _context3.next = 2;
+              len = e.target.value.length;
+              loader = _this4.gifSearch;
+              val = e.target.value;
+              _this4.searched = {};
+              if (!(len >= 3)) {
+                _context3.next = 14;
+                break;
+              }
+              _this4.gifSearch = 'block';
+              _context3.next = 8;
+              return axios.get(URLSERVER + "api/products/search/" + val);
+            case 8:
+              response = _context3.sent;
+              _this4.searched = response.data.data;
+              _this4.dSearch = 'block';
+              _this4.gifSearch = 'none';
+              _context3.next = 16;
+              break;
+            case 14:
+              _this4.dSearch = 'none';
+              _this4.gifSearch = 'none';
+            case 16:
+            case "end":
+              return _context3.stop();
+          }
+        }, _callee3);
+      }))();
+    },
+    getFavorites: function getFavorites() {
+      var _this5 = this;
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+        var response;
+        return _regeneratorRuntime().wrap(function _callee4$(_context4) {
+          while (1) switch (_context4.prev = _context4.next) {
+            case 0:
+              _context4.next = 2;
               return axios.get(URLSERVER + "api/favorites");
             case 2:
-              response = _context3.sent;
+              response = _context4.sent;
               if (response.data.data.length > 0) {
                 _this5.cant_favorite = response.data.data.length;
               } else {
@@ -3207,67 +3237,104 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               }
             case 4:
             case "end":
-              return _context3.stop();
+              return _context4.stop();
           }
-        }, _callee3);
+        }, _callee4);
       }))();
     },
     enterLogin: function enterLogin(event) {
-      //13 es igual a enter
-      if (event.keyCode == 13 || event.key == "Enter") {
-        this.login();
-      }
+      var _this6 = this;
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
+        return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+          while (1) switch (_context5.prev = _context5.next) {
+            case 0:
+              if (!(event.keyCode == 13 || event.key == "Enter")) {
+                _context5.next = 3;
+                break;
+              }
+              _context5.next = 3;
+              return _this6.login();
+            case 3:
+            case "end":
+              return _context5.stop();
+          }
+        }, _callee5);
+      }))();
     },
     login: function login() {
-      // Asegurémonos de que el usuario haya proporcionado un correo electrónico y una contraseña
-      if (!this.user.email || !this.user.pass) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: 'Por favor, ingrese su correo electrónico y contraseña'
-        });
-        return; // Detener la ejecución si falta el correo electrónico o la contraseña
-      }
-
-      // Realizar la solicitud GET al servidor para iniciar sesión
-      axios.get("".concat(URLSERVER, "api_rapida.php?evento=login&email=").concat(this.user.email, "&password=").concat(this.user.pass)).then(function (response) {
-        // Verificar si la solicitud fue exitosa
-        if (response.data.success === false) {
-          // Si la solicitud fue exitosa pero hubo un error de inicio de sesión
-          Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: response.data.msj_general || 'Error al iniciar sesión'
-          });
-        } else {
-          // Si el inicio de sesión fue exitoso, redirigir al usuario a la página principal
-          location.href = window.location.href;
-        }
-      })["catch"](function (error) {
-        // Si hubo un error en la solicitud (por ejemplo, error de red o servidor no disponible)
-        Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: 'Error al comunicarse con el servidor. Por favor, inténtelo de nuevo más tarde.'
-        });
-        console.error('Error en la solicitud:', error);
-      });
+      var _this7 = this;
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6() {
+        return _regeneratorRuntime().wrap(function _callee6$(_context6) {
+          while (1) switch (_context6.prev = _context6.next) {
+            case 0:
+              if (!(!_this7.user.email || !_this7.user.pass)) {
+                _context6.next = 3;
+                break;
+              }
+              Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor, ingrese su correo electrónico y contraseña'
+              });
+              return _context6.abrupt("return");
+            case 3:
+              _context6.next = 5;
+              return axios.get("".concat(URLSERVER, "api_rapida.php?evento=login&email=").concat(_this7.user.email, "&password=").concat(_this7.user.pass)).then(function (response) {
+                // Verificar si la solicitud fue exitosa
+                console.log("esta es la respuesta de login ", response.data);
+                if (response.data.success === false) {
+                  // Si la solicitud fue exitosa pero hubo un error de inicio de sesión
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: response.data.msj_general || 'Error al iniciar sesión'
+                  });
+                } else {
+                  // Si el inicio de sesión fue exitoso, redirigir al usuario a la página principal
+                  location.href = window.location.href;
+                }
+              })["catch"](function (error) {
+                // Si hubo un error en la solicitud (por ejemplo, error de red o servidor no disponible)
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Error',
+                  text: "Las credenciales ingresadas no son correctas. Por favor, verifica tu información e inténtalo de nuevo."
+                });
+                console.error('Error en la solicitud:', error);
+              });
+            case 5:
+            case "end":
+              return _context6.stop();
+          }
+        }, _callee6);
+      }))();
     },
     logout: function logout() {
-      localStorage.clear();
-      localStorage.setItem('ModalPrincipal', 'visto');
-      axios.get(URLSERVER + "api_rapida.php?evento=logout").then(function () {
-        location.href = URLSERVER;
-      });
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7() {
+        return _regeneratorRuntime().wrap(function _callee7$(_context7) {
+          while (1) switch (_context7.prev = _context7.next) {
+            case 0:
+              localStorage.clear();
+              localStorage.setItem('ModalPrincipal', 'visto');
+              _context7.next = 4;
+              return axios.get(URLSERVER + "api_rapida.php?evento=logout").then(function () {
+                location.href = URLSERVER;
+              });
+            case 4:
+            case "end":
+              return _context7.stop();
+          }
+        }, _callee7);
+      }))();
     }
   },
   created: function created() {
-    var _this6 = this;
+    var _this8 = this;
     EventBus.$on('update_cantCart', function (data) {
-      _this6.cant_cart = data;
+      _this8.cant_cart = data;
     });
     EventBus.$on('update_cantFavorite', function (data) {
-      _this6.cant_favorite = data;
+      _this8.cant_favorite = data;
     });
   },
   mounted: function mounted() {
@@ -4283,128 +4350,146 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       console.log(user);
       var user_data = _objectSpread({}, user);
       console.log("esto es user_data", user_data);
-      axios.post(URLSERVER + 'api/update_profile', {
-        user_data: user_data
-      }).then(function (response) {
-        console.log(response.data);
-        that.userData = user_data;
-        fetch(URLHOME + "api_rapida.php?evento=obtenerTodo");
-        Swal.fire('Perfil', 'Tus datos han sido guardado exitosamente', 'success');
-      })["catch"](function (error) {
-        console.log("esto es el error", error);
-      });
+      var maxAttempts = 5; // Número máximo de intentos
+      var retryDelay = 1000; // Retraso inicial en ms
+      function makeRequest() {
+        return _makeRequest.apply(this, arguments);
+      }
+      function _makeRequest() {
+        _makeRequest = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
+          var attempts,
+            response,
+            _args5 = arguments;
+          return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+            while (1) switch (_context5.prev = _context5.next) {
+              case 0:
+                attempts = _args5.length > 0 && _args5[0] !== undefined ? _args5[0] : 0;
+                _context5.prev = 1;
+                _context5.next = 4;
+                return axios.post(URLHOME + 'api/update_profile', {
+                  user_data: user_data
+                });
+              case 4:
+                response = _context5.sent;
+                console.log(response.data);
+                that.userData = user_data;
+                fetch(URLHOME + "api_rapida.php?evento=obtenerTodo");
+                Swal.fire('Perfil', 'Tus datos han sido guardado exitosamente', 'success');
+                _context5.next = 14;
+                break;
+              case 11:
+                _context5.prev = 11;
+                _context5.t0 = _context5["catch"](1);
+                if (_context5.t0.response && _context5.t0.response.status === 429 && attempts < maxAttempts) {
+                  console.warn("Intento ".concat(attempts + 1, " fallido. Esperando ").concat(retryDelay * (attempts + 1), "ms antes de reintentar."));
+                  setTimeout(function () {
+                    return makeRequest(attempts + 1);
+                  }, retryDelay * (attempts + 1));
+                } else {
+                  console.log("esto es el error", _context5.t0);
+                  Swal.fire('Error', 'Hubo un problema al guardar tus datos. Por favor, intenta de nuevo más tarde.', 'error');
+                }
+              case 14:
+              case "end":
+                return _context5.stop();
+            }
+          }, _callee5, null, [[1, 11]]);
+        }));
+        return _makeRequest.apply(this, arguments);
+      }
+      makeRequest();
     },
     getStates: function getStates() {
       var _this6 = this;
-      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
-        var response, response2;
-        return _regeneratorRuntime().wrap(function _callee5$(_context5) {
-          while (1) switch (_context5.prev = _context5.next) {
-            case 0:
-              _context5.next = 2;
-              return axios.get(URLSERVER + "api/states");
-            case 2:
-              response = _context5.sent;
-              console.log("esto es la respuesta", response);
-              _this6.states.push(response.data.data);
-              _context5.next = 7;
-              return axios.get(URLSERVER + "api/Allstates");
-            case 7:
-              response2 = _context5.sent;
-              console.log("esto es la response2", response2);
-              _this6.Allstates = response2.data.data;
-              console.log("esto es this.allStates ", _this6.Allstates);
-            case 11:
-            case "end":
-              return _context5.stop();
-          }
-        }, _callee5);
-      }))();
-    },
-    getRegions: function getRegions() {
-      var _this7 = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6() {
-        var response, _yield$axios$get, data;
+        var response, response2;
         return _regeneratorRuntime().wrap(function _callee6$(_context6) {
           while (1) switch (_context6.prev = _context6.next) {
             case 0:
               _context6.next = 2;
-              return axios.get(URLSERVER + "api/regions");
+              return axios.get(URLSERVER + "api/states");
             case 2:
               response = _context6.sent;
-              _this7.regions = response.data.data;
-              _context6.next = 6;
-              return axios.get(URLSERVER + "api/Allregions");
-            case 6:
-              _yield$axios$get = _context6.sent;
-              data = _yield$axios$get.data;
-              _this7.Allregions = data.data;
-            case 9:
+              console.log("esto es la respuesta", response);
+              _this6.states.push(response.data.data);
+              _context6.next = 7;
+              return axios.get(URLSERVER + "api/Allstates");
+            case 7:
+              response2 = _context6.sent;
+              console.log("esto es la response2", response2);
+              _this6.Allstates = response2.data.data;
+              console.log("esto es this.allStates ", _this6.Allstates);
+            case 11:
             case "end":
               return _context6.stop();
           }
         }, _callee6);
       }))();
     },
-    getCities: function getCities() {
-      var _this8 = this;
+    getRegions: function getRegions() {
+      var _this7 = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7() {
-        var response, _yield$axios$get2, data;
+        var response, _yield$axios$get, data;
         return _regeneratorRuntime().wrap(function _callee7$(_context7) {
           while (1) switch (_context7.prev = _context7.next) {
             case 0:
               _context7.next = 2;
-              return axios.get(URLSERVER + "api/cities");
+              return axios.get(URLSERVER + "api/regions");
             case 2:
               response = _context7.sent;
-              _this8.cities = response.data.data;
+              _this7.regions = response.data.data;
               _context7.next = 6;
-              return axios.get(URLSERVER + "api/Allcities");
+              return axios.get(URLSERVER + "api/Allregions");
             case 6:
-              _yield$axios$get2 = _context7.sent;
-              data = _yield$axios$get2.data;
-              console.log("esto es la respon all cities", data);
-              _this8.Allcities = data.data;
-            case 10:
+              _yield$axios$get = _context7.sent;
+              data = _yield$axios$get.data;
+              _this7.Allregions = data.data;
+            case 9:
             case "end":
               return _context7.stop();
           }
         }, _callee7);
       }))();
     },
-    loadMunicipioHab: function loadMunicipioHab(event) {
-      var _this9 = this;
+    getCities: function getCities() {
+      var _this8 = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8() {
-        var state_id, response;
+        var response, _yield$axios$get2, data;
         return _regeneratorRuntime().wrap(function _callee8$(_context8) {
           while (1) switch (_context8.prev = _context8.next) {
             case 0:
-              state_id = event.target.value;
-              _context8.next = 3;
-              return axios.get(URLSERVER + "api/regions/state/" + state_id);
-            case 3:
+              _context8.next = 2;
+              return axios.get(URLSERVER + "api/cities");
+            case 2:
               response = _context8.sent;
-              _this9.Allregions = response.data.data;
-            case 5:
+              _this8.cities = response.data.data;
+              _context8.next = 6;
+              return axios.get(URLSERVER + "api/Allcities");
+            case 6:
+              _yield$axios$get2 = _context8.sent;
+              data = _yield$axios$get2.data;
+              console.log("esto es la respon all cities", data);
+              _this8.Allcities = data.data;
+            case 10:
             case "end":
               return _context8.stop();
           }
         }, _callee8);
       }))();
     },
-    loadParroquiaHab: function loadParroquiaHab(event) {
-      var _this10 = this;
+    loadMunicipioHab: function loadMunicipioHab(event) {
+      var _this9 = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee9() {
-        var region_id, response;
+        var state_id, response;
         return _regeneratorRuntime().wrap(function _callee9$(_context9) {
           while (1) switch (_context9.prev = _context9.next) {
             case 0:
-              region_id = event.target.value;
+              state_id = event.target.value;
               _context9.next = 3;
-              return axios.get(URLSERVER + "api/cities/region/" + region_id);
+              return axios.get(URLSERVER + "api/regions/state/" + state_id);
             case 3:
               response = _context9.sent;
-              _this10.Allcities = response.data.data;
+              _this9.Allregions = response.data.data;
             case 5:
             case "end":
               return _context9.stop();
@@ -4412,17 +4497,37 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee9);
       }))();
     },
-    getPedidos: function getPedidos() {
-      var _this11 = this;
+    loadParroquiaHab: function loadParroquiaHab(event) {
+      var _this10 = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee10() {
-        var response;
+        var region_id, response;
         return _regeneratorRuntime().wrap(function _callee10$(_context10) {
           while (1) switch (_context10.prev = _context10.next) {
             case 0:
-              _context10.next = 2;
+              region_id = event.target.value;
+              _context10.next = 3;
+              return axios.get(URLSERVER + "api/cities/region/" + region_id);
+            case 3:
+              response = _context10.sent;
+              _this10.Allcities = response.data.data;
+            case 5:
+            case "end":
+              return _context10.stop();
+          }
+        }, _callee10);
+      }))();
+    },
+    getPedidos: function getPedidos() {
+      var _this11 = this;
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11() {
+        var response;
+        return _regeneratorRuntime().wrap(function _callee11$(_context11) {
+          while (1) switch (_context11.prev = _context11.next) {
+            case 0:
+              _context11.next = 2;
               return axios.get(URLSERVER + "api/orders");
             case 2:
-              response = _context10.sent;
+              response = _context11.sent;
               _this11.orders = response.data.data;
               _this11.completos = _this11.orders.filter(function (lista) {
                 return lista.namestatus == "Entregado";
@@ -4432,9 +4537,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               });
             case 6:
             case "end":
-              return _context10.stop();
+              return _context11.stop();
           }
-        }, _callee10);
+        }, _callee11);
       }))();
     },
     repeatOrder: function repeatOrder(id) {
@@ -4460,34 +4565,34 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       });
     },
     devolucion: function devolucion(id) {
-      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11() {
-        var response;
-        return _regeneratorRuntime().wrap(function _callee11$(_context11) {
-          while (1) switch (_context11.prev = _context11.next) {
-            case 0:
-              _context11.next = 2;
-              return axios.get(URLSERVER + "api_rapida.php?evento=devolucion&orders_id" + id);
-            case 2:
-              response = _context11.sent;
-              Swal.fire('Devolución!', 'Su solicitud de devolución ha sido procesada. Será contactado muy pronto', 'success');
-            case 4:
-            case "end":
-              return _context11.stop();
-          }
-        }, _callee11);
-      }))();
-    },
-    calificar: function calificar(id) {
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee12() {
+        var response;
         return _regeneratorRuntime().wrap(function _callee12$(_context12) {
           while (1) switch (_context12.prev = _context12.next) {
             case 0:
-              console.log("funciona");
-            case 1:
+              _context12.next = 2;
+              return axios.get(URLSERVER + "api_rapida.php?evento=devolucion&orders_id" + id);
+            case 2:
+              response = _context12.sent;
+              Swal.fire('Devolución!', 'Su solicitud de devolución ha sido procesada. Será contactado muy pronto', 'success');
+            case 4:
             case "end":
               return _context12.stop();
           }
         }, _callee12);
+      }))();
+    },
+    calificar: function calificar(id) {
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee13() {
+        return _regeneratorRuntime().wrap(function _callee13$(_context13) {
+          while (1) switch (_context13.prev = _context13.next) {
+            case 0:
+              console.log("funciona");
+            case 1:
+            case "end":
+              return _context13.stop();
+          }
+        }, _callee13);
       }))();
     },
     increaseValue: function increaseValue(product) {
@@ -4523,23 +4628,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     sendPhoto: function sendPhoto() {
       var _this13 = this;
-      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee13() {
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee14() {
         var avatar, data, response;
-        return _regeneratorRuntime().wrap(function _callee13$(_context13) {
-          while (1) switch (_context13.prev = _context13.next) {
+        return _regeneratorRuntime().wrap(function _callee14$(_context14) {
+          while (1) switch (_context14.prev = _context14.next) {
             case 0:
               avatar = _this13.avatar;
               data = new FormData();
               data.append("image", avatar);
-              _context13.next = 5;
+              _context14.next = 5;
               return axios.post(URLSERVER + "api_rapida.php?evento=actualizarFotoPerfil&from=web", data);
             case 5:
-              response = _context13.sent;
+              response = _context14.sent;
             case 6:
             case "end":
-              return _context13.stop();
+              return _context14.stop();
           }
-        }, _callee13);
+        }, _callee14);
       }))();
     }
   },
@@ -4559,24 +4664,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   created: function created() {
     var _this14 = this;
-    return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee14() {
+    return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee15() {
       var response, data, i;
-      return _regeneratorRuntime().wrap(function _callee14$(_context14) {
-        while (1) switch (_context14.prev = _context14.next) {
+      return _regeneratorRuntime().wrap(function _callee15$(_context15) {
+        while (1) switch (_context15.prev = _context15.next) {
           case 0:
-            _context14.prev = 0;
-            _context14.next = 3;
+            _context15.prev = 0;
+            _context15.next = 3;
             return fetch(URLHOME + "api_rapida.php?evento=obtenerTodo");
           case 3:
-            response = _context14.sent;
+            response = _context15.sent;
             if (response.ok) {
               _this14.dataLoaded = true;
             }
             // Convertir la respuesta a formato JSON
-            _context14.next = 7;
+            _context15.next = 7;
             return response.json();
           case 7:
-            data = _context14.sent;
+            data = _context15.sent;
             console.log("esto es data", data);
 
             // Verificar si habDirection está vacío
@@ -4616,17 +4721,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
             // Verifica el resultado
             console.log("this.userData::> ", _this14.userData);
-            _context14.next = 18;
+            _context15.next = 18;
             break;
           case 15:
-            _context14.prev = 15;
-            _context14.t0 = _context14["catch"](0);
-            console.error("Error al obtener datos:", _context14.t0);
+            _context15.prev = 15;
+            _context15.t0 = _context15["catch"](0);
+            console.error("Error al obtener datos:", _context15.t0);
           case 18:
           case "end":
-            return _context14.stop();
+            return _context15.stop();
         }
-      }, _callee14, null, [[0, 15]]);
+      }, _callee15, null, [[0, 15]]);
     }))();
   }
 });
@@ -8477,26 +8582,49 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("header", {
+    staticStyle: {
+      "margin-bottom": "40px"
+    },
     attrs: {
       id: "myHeader"
     }
   }, [_c("div", {
-    staticClass: "middle-header"
+    staticClass: "middle-header",
+    staticStyle: {
+      position: "relative",
+      "background-color": "white"
+    }
   }, [_c("div", {
     staticClass: "container-fluid container-movil"
   }, [_c("div", {
     staticClass: "row align-items-center-md"
   }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("div", {
-    staticClass: "col-lg-6 col-md-12",
+    staticClass: "col-lg-6 col-md-14",
+    staticStyle: {
+      width: "350px",
+      position: "relative"
+    },
     attrs: {
       id: "search-header"
     }
   }, [_c("form", {
     staticClass: "form-inline",
+    staticStyle: {
+      display: "flex",
+      "align-items": "center",
+      "justify-content": "space-between",
+      width: "100%"
+    },
     on: {
       submit: function submit($event) {
         return _vm.search();
       }
+    }
+  }, [_c("div", {
+    staticStyle: {
+      display: "flex",
+      width: "90%",
+      "align-items": "center"
     }
   }, [_c("input", {
     directives: [{
@@ -8506,10 +8634,16 @@ var render = function render() {
       expression: "searchText"
     }],
     staticClass: "form-control",
+    staticStyle: {
+      "flex-grow": "1",
+      "border-top-left-radius": "100px",
+      "border-bottom-left-radius": "100px",
+      padding: "10px"
+    },
     attrs: {
       id: "bio-search",
       type: "text",
-      placeholder: "Busque aquí...",
+      placeholder: "Buscar Productos",
       "aria-label": "Search",
       autocomplete: "off"
     },
@@ -8526,6 +8660,19 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("button", {
     staticClass: "btn btn-search",
+    staticStyle: {
+      height: "39px",
+      display: "flex",
+      "align-items": "center",
+      "justify-content": "center",
+      "background-color": "#203876",
+      padding: "5px 5px",
+      "border-top-right-radius": "100px",
+      "border-bottom-right-radius": "100px",
+      "margin-left": "-1px",
+      cursor: "pointer",
+      "font-size": "16px"
+    },
     attrs: {
       type: "button"
     },
@@ -8535,10 +8682,20 @@ var render = function render() {
       }
     }
   }, [_c("img", {
+    staticStyle: {
+      width: "20px",
+      height: "20px",
+      "margin-right": "10px"
+    },
     attrs: {
-      src: "/assets/img/visualizar-producto-bio.svg"
+      src: "/assets/img/Lupa.png"
     }
-  })]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("span", {
+    staticStyle: {
+      color: "white",
+      padding: "10px 15px"
+    }
+  }, [_vm._v("Buscar")])])]), _vm._v(" "), _c("div", {
     staticClass: "keyup_search",
     style: {
       display: _vm.dSearch
@@ -8570,6 +8727,9 @@ var render = function render() {
     }
   }, [_c("ul", [_c("li", {
     staticClass: "dropdown",
+    staticStyle: {
+      width: "25%"
+    },
     attrs: {
       id: "nav-login"
     }
@@ -8583,15 +8743,11 @@ var render = function render() {
       "aria-haspopup": "true",
       "aria-expanded": "false"
     }
-  }, [_c("span", {
-    staticClass: "link-text"
-  }, [_vm._v("Entrar / Registrarse")]), _vm._v(" "), _c("img", {
-    attrs: {
-      src: "/assets/img/login-bio.png",
-      alt: "Login"
-    }
-  })]) : _vm._e(), _vm._v(" "), _c("div", {
+  }, [_vm._m(2)]) : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "dropdown-menu login_navbar",
+    staticStyle: {
+      "background-color": "#203876"
+    },
     attrs: {
       "aria-labelledby": "navbarLogin"
     }
@@ -8648,7 +8804,7 @@ var render = function render() {
         _vm.$set(_vm.user, "pass", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("div", {
+  })]), _vm._v(" "), _vm._m(3), _vm._v(" "), _c("div", {
     staticClass: "form-group"
   }, [_c("button", {
     staticClass: "btn",
@@ -8660,7 +8816,7 @@ var render = function render() {
         return _vm.login();
       }
     }
-  }, [_vm._v("Entrar")])]), _vm._v(" "), _vm._m(3)])])]), _vm._v(" "), !!_vm.userlogged ? _c("li", {
+  }, [_vm._v("Entrar")])]), _vm._v(" "), _vm._m(4)])])]), _vm._v(" "), !!_vm.userlogged ? _c("li", {
     attrs: {
       id: "nav-logged"
     }
@@ -8677,7 +8833,10 @@ var render = function render() {
       alt: "User"
     }
   }), !!_vm.userlogged ? _c("span", {
-    staticClass: "link-text"
+    staticClass: "link-text",
+    staticStyle: {
+      color: "black"
+    }
   }, [_vm._v(" " + _vm._s(_vm.userlogged.name))]) : _vm._e()]), _vm._v(" "), _c("a", {
     staticClass: "logout",
     attrs: {
@@ -8690,7 +8849,7 @@ var render = function render() {
     }
   }, [_c("img", {
     attrs: {
-      src: "/assets/img/icono-salir-bio.png"
+      src: "/assets/img/Derecha@2x.png"
     }
   })])]) : _vm._e(), _vm._v(" "), _c("li", {
     attrs: {
@@ -8705,7 +8864,7 @@ var render = function render() {
     }
   }, [_c("img", {
     attrs: {
-      src: "/assets/img/carrito-de-compras-bio.png",
+      src: "/assets/img/Carrito.png",
       alt: "Cart"
     }
   }), _c("span", {
@@ -8723,7 +8882,7 @@ var render = function render() {
     }
   }, [_c("img", {
     attrs: {
-      src: "/assets/img/favoritos-bio.png",
+      src: "/assets/img/Favorito.png",
       alt: "Favorites"
     }
   }), _c("span", {
@@ -8756,9 +8915,20 @@ var render = function render() {
   }), _c("span", {
     staticClass: "quantity-span"
   }, [_vm._v(_vm._s(_vm.saldo))])])]) : _vm._e()])])])])]), _vm._v(" "), _c("nav", {
-    staticClass: "navbar navbar-expand-lg navbar-light color-white navbar-custom"
+    staticClass: "navbar navbar-expand-lg navbar-light color-white navbar-custom",
+    staticStyle: {
+      width: "100%",
+      "background-color": "white",
+      "border-bottom": "1px solid #ccc",
+      padding: "0"
+    }
   }, [_c("div", {
-    staticClass: "container-fluid"
+    staticClass: "container-fluid",
+    staticStyle: {
+      width: "100%",
+      position: "absolute",
+      padding: "10px 0"
+    }
   }, [_c("div", {
     attrs: {
       id: "mainNavbar"
@@ -8768,7 +8938,7 @@ var render = function render() {
     attrs: {
       id: "top-info"
     }
-  }, [_vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _c("div", {
+  }, [_vm._m(5), _vm._v(" "), _vm._m(6), _vm._v(" "), _c("div", {
     staticClass: "col-md-12"
   }, [_vm.userlogged ? _c("div", {
     staticClass: "top-info-nav"
@@ -8795,37 +8965,27 @@ var render = function render() {
     }
   }), _c("span", {
     staticClass: "quantity-span"
-  }, [_vm._v(_vm._s(_vm.cant_favorite))])])]) : _vm._e()])]), _vm._v(" "), _c("ul", {
-    staticClass: "navbar-nav"
-  }, [_vm._l(_vm.categories.slice(0, 5), function (cat) {
-    return _c("li", {
-      key: cat.id,
-      staticClass: "nav-item"
-    }, [_c("a", {
-      staticClass: "nav-link",
-      attrs: {
-        href: "/catalog?cat=" + cat.id
-      }
-    }, [_vm._v(_vm._s(cat.name))])]);
-  }), _vm._v(" "), _c("li", {
+  }, [_vm._v(_vm._s(_vm.cant_favorite))])])]) : _vm._e()])]), _vm._v(" "), _c("div", [_c("ul", {
+    staticClass: "navbar-nav",
+    staticStyle: {
+      display: "flex",
+      "align-items": "center",
+      "padding-left": "10rem",
+      "padding-right": "15px"
+    }
+  }, [_c("li", {
     staticClass: "nav-item dropdown",
     attrs: {
       id: "nav-categories"
     }
-  }, [_c("a", {
-    staticClass: "nav-link dropdown-toggle",
-    attrs: {
-      href: "#",
-      id: "navbarCategories",
-      role: "button",
-      "data-toggle": "dropdown",
-      "aria-haspopup": "true",
-      "aria-expanded": "false"
-    }
-  }, [_vm._v("\n\t\t\t\t\t\t\t\tMás Categorías\n\t\t\t\t\t\t\t")]), _vm._v(" "), _c("div", {
+  }, [_vm._m(7), _vm._v(" "), _c("div", {
     staticClass: "dropdown-menu",
+    staticStyle: {
+      "margin-left": "-10px",
+      "background-color": "#203876"
+    },
     attrs: {
-      "aria-labelledby": "navbarCategories"
+      "aria-labelledby": "dropdownMenu2"
     }
   }, _vm._l(_vm.categories.slice(5), function (cat) {
     return _c("a", {
@@ -8835,12 +8995,52 @@ var render = function render() {
         href: "/catalog?cat=" + cat.id
       }
     }, [_vm._v(_vm._s(cat.name))]);
-  }), 0)]), _vm._v(" "), _c("li", {
+  }), 0)]), _vm._v(" "), _c("span", {
+    staticStyle: {
+      "font-weight": "900",
+      display: "flex",
+      "align-items": "center",
+      "justify-content": "center",
+      "font-size": "18",
+      "font-family": "Arial, Helvetica, sans-serif",
+      color: "#203876"
+    }
+  }, [_vm._v("Hogar")]), _vm._v(" "), _vm._l(_vm.categories.slice(0, 5), function (cat) {
+    return _c("li", {
+      key: cat.id,
+      staticClass: "nav-item"
+    }, [_c("a", {
+      staticClass: "nav-link",
+      staticStyle: {
+        display: "flex",
+        "align-items": "center"
+      },
+      attrs: {
+        href: "/catalog?cat=" + cat.id
+      }
+    }, [_c("span", {
+      staticStyle: {
+        "font-family": "Arial, Helvetica, sans-serif",
+        "font-weight": "900",
+        color: "black",
+        display: "flex",
+        "align-items": "center"
+      }
+    }, [_vm._v("\n\t\t\t\t\t\t\t\t" + _vm._s(cat.name + " ") + "\n\t\t\t\t\t\t\t\t"), _c("img", {
+      staticStyle: {
+        "margin-left": "5px"
+      },
+      attrs: {
+        src: "/assets/img/Abajo.png",
+        alt: "icon"
+      }
+    })])])]);
+  }), _vm._v(" "), _c("li", {
     staticClass: "nav-item dropdown",
     attrs: {
       id: "nav-all-categories"
     }
-  }, [_vm._m(6), _vm._v(" "), _c("div", {
+  }, [_vm._m(8), _vm._v(" "), _c("div", {
     staticClass: "dropdown-menu",
     attrs: {
       "aria-labelledby": "navbarCategories"
@@ -8853,7 +9053,7 @@ var render = function render() {
         href: "/catalog?cat=" + cat.id
       }
     }, [_vm._v(_vm._s(cat.name))]);
-  }), 0)]), _vm._v(" "), _vm._m(7)], 2)])])])]);
+  }), 0)]), _vm._v(" "), _vm._m(9)], 2)])])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -8870,7 +9070,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("img", {
     attrs: {
-      src: "/assets/img/menu-movil-bio.png",
+      src: "/assets/img/Menu.png",
       alt: "Menu Bars"
     }
   })])]);
@@ -8889,14 +9089,37 @@ var staticRenderFns = [function () {
     }
   }, [_c("img", {
     staticStyle: {
-      width: "100%",
+      width: "80%",
       height: "auto"
     },
     attrs: {
-      src: "/img/logo_bio.png",
+      src: "/img/Logo.png",
       alt: "Bio Mercados"
     }
   })])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
+    staticStyle: {
+      display: "flex",
+      width: "45%",
+      "align-items": "center",
+      "justify-content": "space-between"
+    }
+  }, [_c("img", {
+    attrs: {
+      src: "/assets/img/Usuario.png",
+      alt: "Login"
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "link-text",
+    staticStyle: {
+      color: "black",
+      "font-size": "18px",
+      width: "25%"
+    }
+  }, [_vm._v("Inicio de sesion")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -8981,6 +9204,51 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("a", {
+    staticClass: "nav-link",
+    attrs: {
+      href: "#",
+      id: "navbarCategories",
+      role: "button",
+      "data-toggle": "dropdown",
+      "aria-haspopup": "true",
+      "aria-expanded": "false"
+    }
+  }, [_c("div", {
+    staticStyle: {
+      width: "100%",
+      display: "flex",
+      "align-items": "center",
+      "justify-content": "center"
+    }
+  }, [_c("img", {
+    staticStyle: {
+      width: "35px"
+    },
+    attrs: {
+      src: "/assets/img/Menu.png",
+      alt: "Menu"
+    }
+  }), _vm._v(" "), _c("span", {
+    staticStyle: {
+      color: "black",
+      "font-weight": "800",
+      "font-size": "18px",
+      "font-family": "Arial, Helvetica, sans-serif"
+    }
+  }, [_vm._v("Todas las categoría")]), _vm._v(" "), _c("hr", {
+    staticStyle: {
+      width: "2px",
+      height: "35px",
+      "background-color": "black",
+      border: "none",
+      margin: "0px 6px",
+      opacity: "0.3"
+    }
+  })])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("a", {
     staticClass: "nav-link dropdown-toggle",
     attrs: {
       href: "#",
@@ -9006,7 +9274,9 @@ var staticRenderFns = [function () {
       id: "nav-bios"
     }
   }, [_c("a", {
-    staticClass: "nav-link dropdown-toggle",
+    staticStyle: {
+      color: "#ED3928"
+    },
     attrs: {
       href: "#",
       id: "navbarBios",
@@ -9015,37 +9285,11 @@ var staticRenderFns = [function () {
       "aria-haspopup": "true",
       "aria-expanded": "false"
     }
-  }, [_vm._v("\n\t\t\t\t\t\t\t\tConozca a bio mercados\n\t\t\t\t\t\t\t\t"), _c("img", {
+  }, [_vm._v("\n\t\t\t\t\t\t\t\tOfertas\n\t\t\t\t\t\t\t\t"), _c("img", {
     attrs: {
       src: "/assets/img/abajo-blanco-bio.svg"
     }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "dropdown-menu",
-    attrs: {
-      "aria-labelledby": "navbarBios"
-    }
-  }, [_c("a", {
-    staticClass: "dropdown-item",
-    attrs: {
-      href: "/culture"
-    }
-  }, [_vm._v("Cultura bio")]), _vm._v(" "), _c("a", {
-    staticClass: "dropdown-item",
-    attrs: {
-      href: "/sucursal"
-    }
-  }, [_vm._v("Sucursales")]), _vm._v(" "), _c("a", {
-    staticClass: "dropdown-item",
-    attrs: {
-      target: "_blank",
-      href: "http://portalproveedores.biomercados.com.ve:18880/webui/"
-    }
-  }, [_vm._v("Proveedores")]), _vm._v(" "), _c("a", {
-    staticClass: "dropdown-item",
-    attrs: {
-      href: "/contact"
-    }
-  }, [_vm._v("Contacto")])])]);
+  })])]);
 }];
 render._withStripped = true;
 
@@ -12495,10 +12739,16 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("section", {
+  return _c("div", {
+    staticStyle: {
+      width: "100%",
+      padding: "80px"
+    }
+  }, [_c("section", {
     staticStyle: {
       overflow: "hidden",
-      height: "auto !important"
+      height: "85% !important",
+      width: "100%"
     },
     attrs: {
       id: "main-slider"
@@ -12513,7 +12763,10 @@ var render = function render() {
       "data-ride": "carousel"
     }
   }, [_c("ol", {
-    staticClass: "carousel-indicators"
+    staticClass: "carousel-indicators",
+    staticStyle: {
+      "margin-bottom": "0%"
+    }
   }, _vm._l(_vm.sliders, function (slider, index) {
     return _c("li", {
       key: slider.id,
@@ -12528,7 +12781,7 @@ var render = function render() {
   }), 0), _vm._v(" "), _c("div", {
     staticClass: "carousel-inner",
     staticStyle: {
-      height: "600px !important"
+      height: "80% !important"
     }
   }, _vm._l(_vm.sliders, function (slider, index) {
     return _c("div", {
@@ -12582,7 +12835,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("span", {
     staticClass: "sr-only"
-  }, [_vm._v("Next")])])])]);
+  }, [_vm._v("Next")])])])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -12797,23 +13050,20 @@ var render = function render() {
     }
   }, [_c("title", [_vm._v("datos-personales-bio-mercados")]), _vm._v(" "), _c("g", {
     attrs: {
-      id: "Capa_2",
-      "data-name": "Capa 2"
-    }
-  }, [_c("g", {
-    attrs: {
       id: "Perfil_de_Usuario",
       "data-name": "Perfil de Usuario"
     }
   }, [_c("path", {
     attrs: {
+      fill: "#203876",
       d: "M8.22,9.63a4.63,4.63,0,0,0,3.4-1.41A4.63,4.63,0,0,0,13,4.82a4.65,4.65,0,0,0-1.41-3.41A4.63,4.63,0,0,0,8.22,0,4.65,4.65,0,0,0,4.81,1.41,4.65,4.65,0,0,0,3.4,4.82a4.63,4.63,0,0,0,1.41,3.4A4.65,4.65,0,0,0,8.22,9.63ZM5.64,2.24A3.48,3.48,0,0,1,8.22,1.17a3.46,3.46,0,0,1,2.57,1.07,3.48,3.48,0,0,1,1.07,2.58,3.46,3.46,0,0,1-1.07,2.57A3.46,3.46,0,0,1,8.22,8.46,3.48,3.48,0,0,1,5.64,7.39,3.46,3.46,0,0,1,4.57,4.82,3.48,3.48,0,0,1,5.64,2.24Z"
     }
   }), _vm._v(" "), _c("path", {
     attrs: {
+      fill: "#203876",
       d: "M16.65,15.38a12.56,12.56,0,0,0-.17-1.26,9.22,9.22,0,0,0-.31-1.28,6.15,6.15,0,0,0-.52-1.18,4.61,4.61,0,0,0-.79-1,3.69,3.69,0,0,0-1.13-.71,4,4,0,0,0-1.44-.26,1.47,1.47,0,0,0-.79.33l-.81.53A4.46,4.46,0,0,1,9.63,11a4.1,4.1,0,0,1-1.29.21A4.15,4.15,0,0,1,7.05,11a4.37,4.37,0,0,1-1-.46L5.18,10a1.45,1.45,0,0,0-.78-.33A4,4,0,0,0,3,9.92a3.69,3.69,0,0,0-1.13.71,4.92,4.92,0,0,0-.79,1,6.83,6.83,0,0,0-.52,1.18A10.91,10.91,0,0,0,.2,14.12,12.41,12.41,0,0,0,0,15.38c0,.38,0,.78,0,1.18a3.3,3.3,0,0,0,1,2.51A3.52,3.52,0,0,0,3.53,20h9.63a3.53,3.53,0,0,0,2.54-.93,3.34,3.34,0,0,0,1-2.51c0-.4,0-.8,0-1.18Zm-1.76,2.84a2.37,2.37,0,0,1-1.73.61H3.53a2.4,2.4,0,0,1-1.74-.61,2.18,2.18,0,0,1-.62-1.66c0-.37,0-.74,0-1.1a8.52,8.52,0,0,1,.15-1.14,8.36,8.36,0,0,1,.27-1.12,5.09,5.09,0,0,1,.42-1,3.54,3.54,0,0,1,.58-.76A2.39,2.39,0,0,1,3.39,11a2.64,2.64,0,0,1,.92-.18l.23.14.83.54a5.64,5.64,0,0,0,1.32.59,5.37,5.37,0,0,0,3.3,0,5.74,5.74,0,0,0,1.33-.59l.82-.54.24-.14a2.74,2.74,0,0,1,.92.18,2.34,2.34,0,0,1,.75.47,3.24,3.24,0,0,1,.58.76,5.13,5.13,0,0,1,.43,1,8.36,8.36,0,0,1,.27,1.12q.11.62.15,1.14h0c0,.35,0,.72,0,1.1a2.14,2.14,0,0,1-.62,1.66Z"
     }
-  })])])]), _vm._v("\n\t\t\t\t\t\t\t\t\tDatos personales\n\t\t\t\t\t\t\t\t")])]), _vm._v(" "), _c("li", {
+  })])]), _vm._v("\n\t\t\t\t\t\t\t\t\tDatos personales\n\t\t\t\t\t\t\t\t")])]), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("a", {
     ref: "addressLink",
@@ -14203,6 +14453,9 @@ var staticRenderFns = [function () {
     staticClass: "form-group"
   }, [_c("button", {
     staticClass: "btn btn-submit",
+    staticStyle: {
+      "background-color": "black"
+    },
     attrs: {
       type: "button"
     }
@@ -99120,8 +99373,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/developftu/Documentos/practica/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/developftu/Documentos/practica/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/developftu/Documentos/EosEcommerce/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/developftu/Documentos/EosEcommerce/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

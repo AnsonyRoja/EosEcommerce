@@ -3,7 +3,7 @@
 			<div class="row">
 				<div class="col-lg-3">
 					<div class="footer-block">
-						<img src="/assets/img/logo-bio-mercados.svg" alt="Bio Mercados">
+						<img src="/assets/img/Logo.png" alt="Bio Mercados">
 						
 						<p><span>Teléfono:</span> (0241) 335.4101</p>
 						<p><span>Correo:</span> contacto@biomercados.com.ve</p>

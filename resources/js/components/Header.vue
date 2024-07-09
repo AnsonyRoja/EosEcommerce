@@ -1,5 +1,5 @@
 <template>
-    <header id="myHeader">
+    <header id="myHeader" style="margin-bottom: 40px;  ">
 		<!-- <div class="top-header color-white">
 			<div class="container-fluid">
 				<div class="row align-items-center">
@@ -20,22 +20,28 @@
 				</div>
 			</div>
 		</div> -->
-		<div class="middle-header">
+		<div class="middle-header" style="position: relative; background-color: white;">
 			<div class="container-fluid container-movil">
 				<div class="row align-items-center-md">
 					<div id="toggler-header" class="col-3">
 						<button class="navbar-toggler toggle-menu" type="button">
-							<img src="/assets/img/menu-movil-bio.png" alt="Menu Bars">
+							<img src="/assets/img/Menu.png" alt="Menu Bars">
 						</button>
 					</div>
 					<div id="brand-header" class="col-lg-2 col-4">
-						<a  href="/" class="navbar-brand"><img  src="/img/logo_bio.png" alt="Bio Mercados" style="width: 100%; height: auto"></a>
+						<a  href="/" class="navbar-brand"><img  src="/img/Logo.png" alt="Bio Mercados" style="width: 80%; height: auto"></a>
 					</div>
 
-					<div id="search-header" class="col-lg-6 col-md-12">
-						<form class="form-inline" v-on:submit="search()">
-							<input class="form-control" id="bio-search" type="text" placeholder="Busque aquí..." aria-label="Search" v-on:input="SearchProducts($event)" v-model="searchText" autocomplete="off">
-							<button class="btn btn-search" type="button" @click="search()"><img src="/assets/img/visualizar-producto-bio.svg"></button>
+					<div id="search-header" class="col-lg-6 col-md-14" style=" width: 350px; position: relative;">
+						<form class="form-inline" style=" display: flex; align-items: center;justify-content: space-between;width: 100%;" v-on:submit="search()">
+							<div style="display: flex; width: 90%; align-items: center ;  ">
+							<input class="form-control" style="  flex-grow: 1;  border-top-left-radius: 100px;border-bottom-left-radius: 100px; padding: 10px;"id="bio-search" type="text" placeholder="Buscar Productos" aria-label="Search" v-on:input="SearchProducts($event)" v-model="searchText" autocomplete="off">
+							
+							<button class="btn btn-search"  style=" height: 39px; display: flex; align-items:  center; justify-content: center; background-color: #203876; padding: 5px 5px; border-top-right-radius: 100px; border-bottom-right-radius: 100px;margin-left: -1px;cursor: pointer;  font-size: 16px; " type="button" @click="search()">
+								 <img style=" width: 20px; height: 20px; margin-right: 10px;" src="/assets/img/Lupa.png"> <span style="color: white; padding: 10px 15px" >Buscar</span>
+							</button>
+						    </div>
+							
 							<div class="keyup_search" :style="{ display: dSearch }">
 								<span  :style="{display: gifSearch}">Cargando.....</span>
 								<ol>
@@ -46,20 +52,23 @@
 
 								</ol>
 							</div>
-
 						</form>
 					</div>
 					
 					<div id="nav-header" class="col-lg-4 col-5">
 						<ul>
 							<!-- no loggeado-->
-							<li id="nav-login" class="dropdown">
+							<li id="nav-login" class="dropdown" style="width: 25%;" >
 								<a href="#" v-if="!userlogged" id="navbarLogin" class="navbarLogin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<span class="link-text">Entrar / Registrarse</span> <img src="/assets/img/login-bio.png" alt="Login">
+									<div style="display: flex; width: 45%; align-items: center; justify-content: space-between">
+									
+									<img src="/assets/img/Usuario.png" alt="Login"  > 
+									<span class="link-text" style=" color: black ;font-size: 18px; width: 25%;" >Inicio de sesion</span> 
+								   </div>
 								</a>
 				
 								<!-- el login-->
-								<div class="dropdown-menu  login_navbar" aria-labelledby="navbarLogin">
+								<div class="dropdown-menu  login_navbar" aria-labelledby="navbarLogin" style=" background-color: #203876;">
 									<form action="#">
 										<h3>Acceder a la cuenta</h3>
 										<div class="form-group">
@@ -86,19 +95,19 @@
 							<!-- no loggeado -->
 							<!-- loggeado -->
 							<li id="nav-logged" v-if="!!userlogged">
-								<a href="/profile"><img :src="userlogged.avatar" alt="User" style="margin-left:15px !important;"><span class="link-text" v-if="!!userlogged"> {{userlogged.name}}</span></a> 
+								<a href="/profile"><img :src="userlogged.avatar" alt="User" style="margin-left:15px !important;"><span class="link-text" style="color: black;"v-if="!!userlogged"> {{userlogged.name}}</span></a> 
 								<a href="javascript:void(0)" @click="logout()" class="logout">
-									<img src="/assets/img/icono-salir-bio.png">
+									<img src="/assets/img/Derecha@2x.png">
 								</a>
 							</li>
 							<!-- loggeado -->
 							
 							<li id="nav-cart" data-toggle="tooltip" data-placement="bottom" title="Haga click para ver el carrito">
-								<a href="/cart"><img src="/assets/img/carrito-de-compras-bio.png" alt="Cart"><span class="quantity-span">{{ cant_cart }}</span></a>
+								<a href="/cart"><img src="/assets/img/Carrito.png" alt="Cart"><span class="quantity-span">{{ cant_cart }}</span></a>
 							</li>
 
 							<li id="nav-fav" v-if="userlogged" data-toggle="tooltip" data-placement="bottom" title="Haga click para ver sus favoritos">
-								<a href="/profile?tab=my-favorites"><img src="/assets/img/favoritos-bio.png" alt="Favorites"><span class="quantity-span">{{cant_favorite}}</span></a>
+								<a href="/profile?tab=my-favorites"><img src="/assets/img/Favorito.png" alt="Favorites"><span class="quantity-span">{{cant_favorite}}</span></a>
 							</li>
 							<li id="nav-fav" data-toggle="tooltip" data-placement="bottom"  v-if="!!userlogged">
 								<a href="#" style="background: #ED3928; border-radius: 8px; padding-right: 8px;"><img src="/assets/img/icono-puntos-bio.svg" style="width: 25px !important; height: 25px !important; padding: 5px;" alt="Bio Wallet"><span class="quantity-span">{{saldo}}</span></a>
@@ -113,8 +122,8 @@
 				</div>
 			</div>
 		</div>
-		<nav class="navbar navbar-expand-lg navbar-light color-white navbar-custom">
-			<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg navbar-light color-white navbar-custom" style=" width: 100%; background-color: white; border-bottom: 1px solid #ccc; padding: 0;">
+			<div class="container-fluid" style=" width: 100%; position: absolute; padding: 10px 0;">
 				<div id="mainNavbar">
 					<div id="top-info" class="w-100 align-items-center">
 						<div class="col-md-12 text-right">
@@ -140,10 +149,29 @@
 							<!-- no loggeado -->
 						</div>
 					</div>
-					<ul class="navbar-nav">
+					<div>
+						<ul class="navbar-nav" style="display: flex;align-items: center; padding-left: 10rem; padding-right: 15px;">
+							<li id="nav-categories" class="nav-item dropdown">
+							<a class="nav-link" href="#" id="navbarCategories" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<div style="width: 100%; display: flex; align-items: center; justify-content: center;">
+								<img src="/assets/img/Menu.png" style="width: 35px;" alt="Menu">
+								<span style="color: black; font-weight: 800; font-size: 18px; font-family: Arial, Helvetica, sans-serif " >Todas las categoría</span>
+								<hr  style="width: 2px; height: 35px; background-color: black; border: none; margin: 0px 6px; opacity: 0.3; " >
+							</div>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenu2" style="margin-left: -10px; background-color: #203876; ">
+								
+								<a v-for="cat in categories.slice(5)" :key="cat.id" class="dropdown-item" :href="'/catalog?cat='+cat.id">{{cat.name}}</a>
+						</div>
+						</li> 
+						<span style=" font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 18 ; font-family: Arial, Helvetica, sans-serif; color: #203876;" >Hogar</span>
 						<li class="nav-item" v-for="cat in categories.slice(0,5)" :key="cat.id">
-
-							<a class="nav-link" :href="'/catalog?cat=' + cat.id">{{ cat.name }}</a>
+							<a class="nav-link" :href="'/catalog?cat=' + cat.id" style="display: flex; align-items: center;">
+							<span style="font-family: Arial, Helvetica, sans-serif; font-weight: 900; color: black; display: flex; align-items: center;">
+								{{ cat.name + " " }}
+								<img src="/assets/img/Abajo.png" alt="icon" style="margin-left: 5px;">
+							</span>
+							</a>
 
 					<!-- <template v-if="cat.name === 'VIVERES II'">
 						<div class="dropdown">
@@ -152,7 +180,7 @@
 							</a>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 								<a class="dropdown-item" href="#">Arroz</a>
-								<a class="dropdown-item" href="#">Arroz</a>
+								<a class="dorpdown-item" href="#">Arroz</a>
 							</div>
 						</div>
 						</template>
@@ -170,14 +198,7 @@
 								<a v-for="cat in categories.slice(5)" :key="cat.id" class="dropdown-item" :href="'/catalog?cat='+cat.id">{{cat.name}}</a>
 							</div>
 						</li> -->
-						<li id="nav-categories" class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarCategories" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Más Categorías
-							</a>
-							<div class="dropdown-menu" aria-labelledby="navbarCategories">
-								<a v-for="cat in categories.slice(5)" :key="cat.id" class="dropdown-item" :href="'/catalog?cat='+cat.id">{{cat.name}}</a>
-							</div>
-						</li> 
+					
 						<li id="nav-all-categories" class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarCategories" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="dropdown-uppercase">Categorías</span>
@@ -188,25 +209,26 @@
 							</div>
 						</li>
 						<li id="nav-bios" class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarBios" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Conozca a bio mercados
+							<a style="color: #ED3928;" href="#" id="navbarBios" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Ofertas
 								<img src="/assets/img/abajo-blanco-bio.svg">
 							</a>
-							<div class="dropdown-menu" aria-labelledby="navbarBios">
+							<!-- <div class="dropdown-menu" aria-labelledby="navbarBios">
 								<a class="dropdown-item" href="/culture">Cultura bio</a>
 								<a class="dropdown-item" href="/sucursal">Sucursales</a>
 								<a class="dropdown-item" target="_blank" href="http://portalproveedores.biomercados.com.ve:18880/webui/">Proveedores</a>
 								<a class="dropdown-item" href="/contact">Contacto</a>
-							</div>
+							</div> -->
 						</li>
 					</ul>
-					
+					</div>
 				</div>
 			</div>
 		</nav>
 	</header>
 </template>
 <script>
+
 export default {
     data() {
         return {
@@ -231,13 +253,16 @@ export default {
 		userlogged: Object,
 	},
     methods: {
-    	getAmountBW: function(){
+    	getAmountBW: async function(){
     		if(this.userlogged){
-    			axios.get(URLHOME+'api/getAmountBW/'+this.userlogged.id).then( datos => {
+    			await axios.get(URLHOME+'api/getAmountBW/'+this.userlogged.id).then( datos => {
 	    			this.saldo = datos.data;
 	    		});
     		}
     	},
+
+		
+
 		search() {
 			const route = "/catalog?search="+this.searchText;
 			window.location.href = route;
@@ -278,13 +303,13 @@ export default {
 				this.cant_favorite = 0;
 			}
 		},
-		enterLogin(event) {
+		async enterLogin(event) {
 			//13 es igual a enter
 			if(event.keyCode == 13 || event.key=="Enter") {
-				this.login();
+				await this.login();
 			}
 		},
-		login() {
+		async login() {
     // Asegurémonos de que el usuario haya proporcionado un correo electrónico y una contraseña
     if (!this.user.email || !this.user.pass) {
         Swal.fire({
@@ -296,9 +321,10 @@ export default {
     }
 
     // Realizar la solicitud GET al servidor para iniciar sesión
-    axios.get(`${URLSERVER}api_rapida.php?evento=login&email=${this.user.email}&password=${this.user.pass}`)
+    await axios.get(`${URLSERVER}api_rapida.php?evento=login&email=${this.user.email}&password=${this.user.pass}`)
         .then(response => {
             // Verificar si la solicitud fue exitosa
+			console.log("esta es la respuesta de login ", response.data);
             if (response.data.success === false) {
                 // Si la solicitud fue exitosa pero hubo un error de inicio de sesión
                 Swal.fire({
@@ -316,7 +342,8 @@ export default {
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'Error al comunicarse con el servidor. Por favor, inténtelo de nuevo más tarde.',
+                text: "Las credenciales ingresadas no son correctas. Por favor, verifica tu información e inténtalo de nuevo.",
+
             });
             console.error('Error en la solicitud:', error);
         });
@@ -325,11 +352,11 @@ export default {
 
 },
 
-		logout()
+		async logout()
 		{
 			localStorage.clear();
 			localStorage.setItem('ModalPrincipal','visto');
-			axios.get(URLSERVER+"api_rapida.php?evento=logout").then( () => {
+			await axios.get(URLSERVER+"api_rapida.php?evento=logout").then( () => {
 				location.href = URLSERVER;
 			});
 		}

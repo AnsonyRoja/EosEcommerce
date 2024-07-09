@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Bio en casa | @yield('title')</title>
+	<title>Eos Online | @yield('title')</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="Shortcut Icon" href="/assets/img/favicon.png" type="image/x-icon" />	
+	<link rel="Shortcut Icon" href="/assets/img/favicon.ico" type="image/x-icon" />	
 	<link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
 	<!--<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.min.css') }}?ver=1.0.8">-->
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.min.css') }}?ver=1.0.8">

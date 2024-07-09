@@ -169,18 +169,19 @@ async loadParroquiaHab(event) {
 				console.error('Error al cargar las ciudades:', error.message);
 			}
 		},
-        update_profile(user)
+        async update_profile(user)
 			{
 				const that = this;
 				console.log("this user> antes de guardarse",user);
 
 				const user_data = {
-					...user.habDirection,
+					...user,
+          ...user.habDirection[0],
 				
 					};
 					console.log("esto es user_data", user_data);
-				axios.post(URLSERVER+'api/update_profile', {
-                    user_data: user_data ,
+				await axios.post(URLSERVER+'api/update_profile', {
+                    user_data: user_data,
                 })
                 .then(function (response) {
                 	console.log(response.data);

@@ -13,7 +13,7 @@ body {
 }
 
 a {
-    color: #67BE5A;
+    color: #203876;
     font-weight: 300;
     text-decoration: none;
     transition: color .3s ease;
@@ -21,7 +21,7 @@ a {
 }
 
 a:hover {
-    color: #67BE5A;
+    color: #203876;
     filter: brightness(85%);
     text-decoration: none;
 }
@@ -77,7 +77,7 @@ small {
 }
 
 header .dropdown-menu {
-    background-color: #67BE5A;
+    background-color: #203876;
     border: 0;
     border-radius: 0;
     color: #fff;
@@ -86,6 +86,16 @@ header .dropdown-menu {
     min-width: 15rem;
     padding: 0;
 }
+
+.dropdown-menu.login_navbar {
+    position: absolute;
+    top: -300px; /* Ajusta este valor según la altura del dropdown */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #203876;
+}
+
 
 header .dropdown-menu a {
     color: #fff;
@@ -176,7 +186,7 @@ header .dropdown-menu a:focus {
 .jumbotron h1 {
     font-weight: 400;
     margin-bottom: 0;
-    color: #ED3928 !important;
+    color: #203876 !important;
 }
 
 .section-title {
@@ -188,7 +198,7 @@ header .dropdown-menu a:focus {
     display: inline-flex;
     justify-content: center;
     font-style: italic;
-    color: #ED3928;
+    color: #203876;
     width: 100%;
 }
 
@@ -480,7 +490,7 @@ header .dropdown-menu a:focus {
 }
 
 #nav-header .dropdown-menu .form-control {
-    background-color: #BEE9D7;
+    background-color: #c6d1ed;
     color: #222;
     height: calc(1em + .75rem + 2px);
     padding: .5rem .75rem;
@@ -488,7 +498,7 @@ header .dropdown-menu a:focus {
 }
 
 #nav-header .dropdown-menu .btn {
-    background-color: #67BE5A;
+    background-color: #1DF63A;
     color: #fff;
     display: block;
     margin: auto;
@@ -576,13 +586,30 @@ header .dropdown-menu a:focus {
 .navbar-custom {
     height: 25px;
     border-bottom: 1px solid #ccc;
+    background-color: white !important;
 }
 
+
+
 #search-header form {
-    /* max-width: 350px; */
+    /* max-width: 350px; */ 
     position: relative;
     margin: 1rem auto .5rem;
 }
+
+#btn-search-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 250;
+    height: 250;
+    background-color: #203876;
+    z-index: -1; /* Asegura que esté detrás de otros elementos */
+    border-radius: inherit; /* Para emular el borde redondeado del botón */
+}
+
 
 #search-header form input[type="search"],
 #search-header form input[type="text"] {
@@ -605,7 +632,7 @@ header .dropdown-menu a:focus {
 #search-header form input[type="search"]:focus,
 #search-header form input[type="text"]:focus {
     box-shadow: none;
-    border-color: #eba900;
+    border-color: #203876;
 }
 
 #search-header form .btn-search {
@@ -912,7 +939,7 @@ header .dropdown-menu a:focus {
         align-items: center;
     }
     #navbarCategories {
-        background-color: #67BE5A;
+        background-color: #203876;
     }
     #navbarBios {
         background-color: #ED3928;
@@ -993,7 +1020,7 @@ header .dropdown-menu a:focus {
 .carousel-caption h5,
 .carousel-caption h6 {
     font-weight: 300;
-    color: #ED3928;
+    color: #203876;
     line-height: 1;
 }
 
@@ -2071,7 +2098,7 @@ div[class*="col-"]:not(:last-child) .product-block {
 }
 
 .products-order {
-    background-color: #67BE5A;
+    background-color: #203876;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -2423,7 +2450,7 @@ input[type=checkbox]:checked+.custom-check span {
 }
 
 .profile-title {
-    color: #ED3928;
+    color: #203876;
 }
 
 .profile-img {
@@ -2433,7 +2460,7 @@ input[type=checkbox]:checked+.custom-check span {
     max-height: 220px;
     border-radius: 50%;
     overflow: hidden;
-    border: 8px solid #67BE5A;
+    border: 8px solid #203876;
 }
 
 .profile-img img {
@@ -2495,7 +2522,7 @@ input[type=checkbox]:checked+.custom-check span {
 }
 
 .sidebar-tabs li a svg path {
-    fill: #67BE5A;
+    fill: #203876;
 }
 
 .sidebar-tabs li a:not(.active) {
@@ -2540,7 +2567,7 @@ input[type=checkbox]:checked+.custom-check span {
 
 .user-profile .form-control {
     font-size: 20px;
-    color: #67BE5A;
+    color: #203876;
     height: 35px;
     padding: .25rem .5rem;
     margin-left: -10px;
@@ -2591,7 +2618,7 @@ input[type=checkbox]:checked+.custom-check span {
 .btn-confirm-info,
 .btn-edit-info {
     margin-left: .75rem;
-    color: #67BE5A;
+    color: #203876;
 }
 
 .btn-confirm-info:hover,
@@ -2653,7 +2680,7 @@ input[type=checkbox]:checked+.custom-check span {
     margin-left: 1rem;
     min-width: 15px;
     min-height: 15px;
-    border-color: #67BE5A;
+    border-color: #203876;
 }
 
 .user-profile .dropdown-item input[type="checkbox"]:checked+.custom-check span::before,
@@ -3391,7 +3418,7 @@ label.order-text {
     text-align: left;
     font-size: 22.65px;
     line-height: 1.2;
-    color: #67BE5A;
+    color: #203876;
     margin-bottom: 0;
     transition: all .3s ease;
 }
@@ -3454,13 +3481,13 @@ label.order-text {
     border: 0;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
-    background-color: #67BE5A;
+    background-color: #203876;
     color: #fff;
     transition: all .3s ease;
 }
 
 .footer-block .footer-form .form-group .input-group .btn:hover {
-    background-color: #67BE5A;
+    background-color: #203876;
 }
 
 .on-desktop {
@@ -3468,7 +3495,7 @@ label.order-text {
 }
 
 .bottom-footer {
-    background-color: #77D72B;
+    background-color: #203876;
     color: #fff;
     padding: 14.5px 0;
     margin-top: 2rem;
@@ -3621,7 +3648,7 @@ ul#selected-filters li a.remove-filter-selected {
 }
 
 .keyup_search ol li:hover {
-    background-color: #67BE5A;
+    background-color: #000;
     color: white;
     cursor: pointer;
 }
@@ -3746,19 +3773,26 @@ div.carousel img{
 }
 
 a.slfacebook{
-    background: url('/assets/img/social_icons.png') 0 0;
+    background: url('/assets/img/facebook.png') 0 0;
+    background-repeat:no-repeat ;
+
 }
 
 a.slinstagram{
-    background: url('/assets/img/social_icons.png') -50px 0;
+    background: url('/assets/img/Instagram.png') -50px 0;
+    background-repeat:no-repeat ;
+
 }
 
 a.sltwitter{
-    background: url('/assets/img/social_icons.png') -100px 0;
+    background: url('/assets/img/Tiktok.png') -50px 0;
+    background-repeat:no-repeat ;
 }
 
 a.slyoutube{
-    background: url('/assets/img/social_icons.png') -150px 0;
+    background: url('/assets/img/Youtube.png') -100px 0;
+    background-repeat:no-repeat ;
+
 }
 
 ul.carousel-indicators{

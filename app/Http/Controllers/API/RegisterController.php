@@ -168,7 +168,7 @@ class RegisterController extends BaseController
             
     
         // Retornar los datos actualizados del usuario
-        return response()->json($this->getData($data_user["user_data"]["email"]));
+        // return response()->json($this->getData($data_user["user_data"]["email"]));
     }   
     
 
@@ -178,7 +178,7 @@ class RegisterController extends BaseController
         ->join("cities","cities.id","=","peoples.cities_id")
         ->where("users.email",$email)
         ->first();
-        // $_SESSION["usuario"]=$datos;
+        $_SESSION["usuario"]=$datos;
         return $datos;
     }
 

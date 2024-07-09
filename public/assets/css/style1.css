@@ -1859,7 +1859,7 @@
 		margin-bottom: 0;
 	}
 	.footer-block span{
-		color: #28b67a;
+		color: #203876;
 	}
 	.footer-block p:last-child{
 		margin-bottom: 0;
@@ -1920,7 +1920,7 @@
 		border: 0;
 		border-top-right-radius: 30px;
 		border-bottom-right-radius: 30px;
-		background-color: #80bc00;
+		background-color: #203876;
 		color: #fff;
 		transition: all .3s ease;
 	}

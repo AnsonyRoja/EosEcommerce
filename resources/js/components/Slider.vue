@@ -1,10 +1,11 @@
-<template>    
-    <section id="main-slider" style="overflow: hidden; height: auto !important;">
+<template>      
+    <div style="width: 100%; padding: 80px;" >
+    <section id="main-slider" style="overflow: hidden; height: 85% !important;width: 100% ;">
         <div :id="id" class="carousel slide" data-ride="carousel" style="height:550px !important;">
-            <ol class="carousel-indicators">
+            <ol class="carousel-indicators" style="margin-bottom: 0%;">
                 <li v-for="(slider, index) in sliders" v-bind:key="slider.id" :data-target="'#'+id" :data-slide-to="index" v-bind:class="{'active': index == 0}"></li>
             </ol>
-            <div class="carousel-inner" style="height: 600px !important;">
+            <div class="carousel-inner" style="height: 80% !important;">
                 <div v-bind:class="{'carousel-item': true,'active': index == 0}" v-for="(slider,index) in sliders" v-bind:key="slider.id">
                     <a :href="slider.url" v-if="!!slider.url">
                         <LazyImg class="d-block w-100" :source="'storage/'+slider.image" :alt="slider.image"></LazyImg>
@@ -38,7 +39,9 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+
     </section>
+</div>
 </template>
 <script>
     import LazyImg from './LazyImg.vue';
